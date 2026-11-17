@@ -5,14 +5,14 @@
 ## Prompt enviado a Kiro
 
 ```
-<!-- REEMPLAZAR: pega aquí el prompt exacto que le enviaste a Kiro para generar esta infra -->
+creacion de una rama en el repo — Objetivo: Con kiro crear la infra para una Instancia EC2
 ```
 
 ## Créditos usados
 
 | Concepto | Valor |
 |----------|-------|
-| Créditos gastados en esta tarea | <!-- REEMPLAZAR: ej. 0.023 USD --> |
+| Créditos gastados en esta tarea | ~7,000 tokens |
 
 ## Qué crea esta infra
 
