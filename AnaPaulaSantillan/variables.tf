@@ -1,5 +1,5 @@
 variable "aws_region" {
-  description = "Región de AWS donde se crea la instancia"
+  description = "Región de AWS donde se desplegará la instancia"
   type        = string
   default     = "us-east-1"
 }
@@ -7,23 +7,23 @@ variable "aws_region" {
 variable "instance_name" {
   description = "Nombre de la instancia EC2"
   type        = string
-  default     = "ec2-anapaula"
+  default     = "bootcamp-devops-ec2"
 }
 
 variable "instance_type" {
   description = "Tipo de instancia EC2"
   type        = string
-  default     = "t3.micro"
+  default     = "t2.micro"
 }
 
-variable "key_name" {
-  description = "Nombre de un key pair existente en AWS para acceso SSH (opcional)"
+variable "environment" {
+  description = "Entorno de despliegue (dev, staging, prod)"
   type        = string
-  default     = null
+  default     = "dev"
 }
 
-variable "ssh_allowed_cidr" {
-  description = "CIDR permitido para SSH. Cámbialo por tu IP, ej: 203.0.113.10/32"
-  type        = string
-  default     = "0.0.0.0/0"
+variable "volume_size" {
+  description = "Tamaño del volumen raíz en GB"
+  type        = number
+  default     = 8
 }

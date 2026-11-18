@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">= 1.5.0"
+  required_version = ">= 1.0"
 
   required_providers {
     aws = {
@@ -13,7 +13,7 @@ provider "aws" {
   region = var.aws_region
 }
 
-# AMI más reciente de Amazon Linux 2023
+# Data source para obtener la AMI más reciente de Amazon Linux 2023
 data "aws_ami" "amazon_linux" {
   most_recent = true
   owners      = ["amazon"]
@@ -29,17 +29,25 @@ data "aws_ami" "amazon_linux" {
   }
 }
 
-# Security group: SSH entrante, todo saliente
+# Security Group
 resource "aws_security_group" "ec2_sg" {
   name        = "${var.instance_name}-sg"
-  description = "Permite SSH a la instancia EC2"
+  description = "Security group para la instancia EC2 ${var.instance_name}"
 
   ingress {
     description = "SSH"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = [var.ssh_allowed_cidr]
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "HTTP"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
@@ -50,18 +58,28 @@ resource "aws_security_group" "ec2_sg" {
   }
 
   tags = {
-    Name = "${var.instance_name}-sg"
+    Name        = "${var.instance_name}-sg"
+    Environment = var.environment
+    ManagedBy   = "Terraform"
   }
 }
 
 # Instancia EC2
-resource "aws_instance" "this" {
-  ami                    = data.aws_ami.amazon_linux.id
-  instance_type          = var.instance_type
+resource "aws_instance" "main" {
+  ami           = data.aws_ami.amazon_linux.id
+  instance_type = var.instance_type
+
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
-  key_name               = var.key_name
+
+  root_block_device {
+    volume_size = var.volume_size
+    volume_type = "gp3"
+    encrypted   = true
+  }
 
   tags = {
-    Name = var.instance_name
+    Name        = var.instance_name
+    Environment = var.environment
+    ManagedBy   = "Terraform"
   }
 }
