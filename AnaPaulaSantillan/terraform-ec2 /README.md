@@ -117,6 +117,6 @@ volume_size   = 20
 
 Este proyecto fue generado por Kiro a partir del siguiente prompt:
 
-> "Agrega un códido en terraform para una instancia de ec2"
+> "Eres un experto en Terraform y AWS. Necesito que crees una carpeta con el nombre de AnaPaulaSantillan dentro de bootcamp-devops-2603, luego agrega un códido en terraform para una instancia de ec2. Así mismo, añade un README.md detallando la estructura, requisitos, y lo pertinente para levantar el proyecto."
 
 **Est. Credits Used:** 0.54
