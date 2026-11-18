@@ -1,0 +1,2 @@
+# Ignorar todos los scripts Bash para que no se suban al repositorio
+*.sh
