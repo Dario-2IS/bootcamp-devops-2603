@@ -30,3 +30,30 @@ TAREA 2
 En realidad, rsync no incluye ninguna opción nativa llamada --turbo-sync.
 
 -------------------------------------------------------------------------------------------------------------------------------------
+
+
+TAREA #4
+
+1. script (https://gist.github.com/jthan24/de226afb3f84439ff122684ad047e469)
+2. un script que lea una variable y la imprima por consola
+
+
+root@ubuntu:~$ curl -O https://gist.githubusercontent.com/jthan24/de226afb3f84439ff122684ad047e469/raw/backup.sh
+bash backup.sh
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   543  100   543    0     0   2731      0 --:--:-- --:--:-- --:--:--  2742
+CPU Load: 9.1%
+Memory Usage: 21.22%
+Disk Usage: 30%
+Alert: One of the metrics is above 80%
+root@ubuntu:~$ cat > variable.sh << 'EOF'
+#!/bin/bash
+NOMBRE="Angel"
+echo "Hola, $NOMBRE"
+EOF
+root@ubuntu:~$ chmod +x variable.sh
+./variable.sh
+Hola, Angel
+
+----------------------------------------------------------------------------------------
