@@ -1,0 +1,21 @@
+# Estado de Terraform (NUNCA subir al repositorio, contiene info sensible)
+*.tfstate
+*.tfstate.*
+*.tfvars
+!terraform.tfvars.example
+
+# Directorios de Terraform
+.terraform/
+.terraform.lock.hcl
+crash.log
+crash.*.log
+
+# Sobrescrituras locales que no deben commitearse
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Configuración sensible de CLI
+*.pem
+*.key

@@ -1,0 +1,15 @@
+# Copia este archivo a terraform.tfvars y ajusta los valores.
+# cp terraform.tfvars.example terraform.tfvars
+
+aws_region     = "us-east-1"
+instance_name   = "mabel-ec2"
+instance_type   = "t2.micro"
+
+# Contenido del archivo .pub generado con:
+#   ssh-keygen -t ed25519 -f ~/.ssh/mabel-ec2-key
+# Pega aquí TODO el contenido de ~/.ssh/mabel-ec2-key.pub (en una sola línea):
+public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI... TU-COMENTARIO"
+
+# Restringe SSH a tu IP para mayor seguridad, ej: "200.10.10.5/32"
+# Por defecto permite desde cualquier lado:
+ssh_cidr = "0.0.0.0/0"
