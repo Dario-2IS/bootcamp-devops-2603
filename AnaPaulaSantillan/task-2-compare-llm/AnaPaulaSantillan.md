@@ -1,5 +1,3 @@
-Hola, soy Ana Paula Santillan 👋😄. Mi linkedin es https://www.linkedin.com/in/anisantillans/
-
 # Lab: Comparar LLMs y medir sus límites
 
 El prompt que se utilizó: *'Explica este error y cómo resolverlo: bash: ./deploy.sh: Permission denied'*
