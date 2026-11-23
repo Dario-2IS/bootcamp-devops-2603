@@ -1,2 +1,21 @@
 # Ignorar todos los scripts Bash para que no se suban al repositorio
 *.sh
+
+# Entornos virtuales
+venv/
+.venv/
+env/
+
+# Caché y compilados de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Variables de entorno y editores
+.env
+.vscode/
+.idea/
+
+# Archivos generados en pruebas de lectura/escritura
+registro_eventos.txt
+config_servidor.json
