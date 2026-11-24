@@ -16,3 +16,14 @@ flask --app hello run
 ```bash
 python request.py
 ```
+
+## Evidencias
+
+### Servidor Flask corriendo
+![Servidor Flask](Capturas/01-servidor-flask.png)
+
+### Respuesta en el navegador
+![Navegador](Capturas/02-navegador.png)
+
+### Request desde Python
+![Request Python](Capturas/03-request-python.png)
