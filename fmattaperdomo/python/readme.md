@@ -8,6 +8,19 @@ Esta carpeta contiene ejercicios en Python que cubren los fundamentos del lengua
 - (Opcional pero recomendado) Un entorno virtual activo:
 
 ```bash
+# Verificar la versión (debe ser 3.10 o superior)
+python3 --version
+
+# Crear y activar un entorno virtual aislado
+python3 -m venv .venv
+source .venv/bin/activate        
+
+# Actualizar pip y confirmar que usamos el Python del entorno
+python -m pip install --upgrade pip
+python -c "import sys; print(sys.executable)"
+
+# Evitar subir el entorno al repo
+echo ".venv/" >> .gitignore
 python3 -m venv .venv
 source .venv/bin/activate
 ```
