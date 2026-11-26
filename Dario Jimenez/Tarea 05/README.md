@@ -13,7 +13,7 @@ Este script permite ingresar hasta tres dominios válidos y analizar su conexió
 Ejecuta el script:
 
 ```bash
-bash "network inspector.sh"
+bash "network_inspector.sh"
 ```
 
 La terminal solicitará un dominio a la vez:
